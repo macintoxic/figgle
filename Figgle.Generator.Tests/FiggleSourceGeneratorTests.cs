@@ -672,7 +672,9 @@ public class FiggleSourceGeneratorTests
             return StringComparer.Ordinal.GetHashCode(Normalize(obj));
         }
 
+#if NETCOREAPP2_0_OR_GREATER
         [return: NotNullIfNotNull("s")]
+#endif
         private static string? Normalize(string? s) => s?.Replace("\r", "");
     }
 }
